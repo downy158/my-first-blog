@@ -3,12 +3,60 @@
     <head>
          <link href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
         <title>Django Girls blog</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-       <link rel="stylesheet" href="{% static "css/blog.css" %}">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="{% static "css/blog.css" %}">
     </head>
     <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Downy블로그</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">대분류1<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">소분류1</a></li>
+            <li><a href="#">소분류2</a></li>
+            <li><a href="#">소분류3</a></li>
+          </ul>
+        </li>
+          <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">대분류2<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">소분류1</a></li>
+            <li><a href="#">소분류2</a></li>
+            <li><a href="#">소분류3</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
     <div class="page-header">
         {% if user.is_authenticated %}
         <a href="{% url "post_new" %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
@@ -17,7 +65,7 @@
         {% else %}
         <a href="{% url "django.contrib.auth.views.login" %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
         {% endif %}
-        <h1><a href="{% url "blog.views.post_list" %}">Django Girls</a></h1>
+        <h1><a href="{% url "blog.views.post_list" %}">Beautiful SONG</a></h1>
 </div>
     <div class="content">
         <div class="row">
